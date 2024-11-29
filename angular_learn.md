@@ -59,10 +59,31 @@ export class AppComponent {
 ## Angular 17 - Modular Architecture
 1. No more NgModule
 2. No more default AppModule 
-3. Everything is standalone so we could use them irectly without importing the module as it's standalone. 
+3. Everything is standalone so we could use them directly in application without importing the module as it's standalone. 
 4. Still modules are supported in this versions.
 5. Components will communicate with each oher using the input and output decerators.
 
+---
+
+## Component Dataflow
+
+1. @input --> Used for sending the data to the component
+2. @output --> Used for sending the data from the component.
+
+## Component Structure 
+1. `<component_name>.component.html` --> Template/HTML/UI
+2. `<component_name>.component.css` --> Stylesheet for the componet
+3. `<component_name>.component.spec.ts` --> Unit test for the component
+4. `<component_name>.component.ts` --> Class for the component/logic/data/interactions.
+
+---
+## Component Databinding
+ class --> template --> Class
+
+ ---
+ ## Generate Components
+ 1. `ng generate component <component_name>` --> This will create a `.css` , `.html` , `.ts` and `spec.ts` with the same name.
+ 2. Angular 17 doesn't have the `NgModule` , `AppModule` by default.
 ## Interfaces
 **Definition**: An interface defines the shape or structure of an object, acting as a contract that specifies properties and methods.
 
