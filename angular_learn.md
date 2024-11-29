@@ -96,8 +96,15 @@ Example:
 
 ## Angular File Structure
 1. **`src` Folder**:
+
+   ## **`app folder`**: The folder which has complete project code or application code and has 4 main components
+   1.`.html` --> Template file
+   2.`.css / .scss` --> Style 
+   3.`.spec.ts` --> Unit test file
+   4.`.ts` --> Logical piece of component
+
    - **`main.ts`**: Entry point of the application.
-   - **`index.html`**: The main HTML file served to users.
+   - **`index.html`**: The main HTML file served to users and this is only single file present.
    - **`environment/`**: Contains configurations for production and development.
    - **`assets/`**: For storing images and static files.
    - **`polyfills`**: Ensures compatibility with older browsers.
@@ -110,6 +117,7 @@ Example:
      - `main`: Specifies the `main.ts` file path.
      - `styles`: Lists CSS files to include (e.g., Bootstrap).
      - `scripts`: Lists JavaScript files to include (e.g., Bootstrap scripts).
+     - Mainly used while pipeline deployments.
 
 Example:
 ```json
@@ -141,6 +149,8 @@ Example:
 2. **`package-lock.json`**: Locks the dependency tree for consistency across environments.
 
 ---
+## TypeScript dependencies
+1.TypeScript configurations are done in the `tsconfig.app.json` 
 
 ## Bootstrap and Material Integration
 1. Add Bootstrap via `angular.json`:
