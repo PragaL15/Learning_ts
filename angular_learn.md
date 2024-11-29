@@ -97,7 +97,8 @@ Example:
 ## Angular File Structure
 1. **`src` Folder**:
 
-   ## **`app folder`**: The folder which has complete project code or application code and has 4 main components
+   ##### `app folder`:
+   The folder which has complete project code or application code and has 4 main components
    1.`.html` --> Template file
    2.`.css / .scss` --> Style 
    3.`.spec.ts` --> Unit test file
@@ -109,7 +110,7 @@ Example:
    - **`assets/`**: For storing images and static files.
    - **`polyfills`**: Ensures compatibility with older browsers.
 
-2. **`angular.json`**:
+3. **`angular.json`**:
    - Key configurations:
      - `projectType`: Indicates whether the project is an application.
      - `sourceRoot`: Points to the root folder (usually `src`).
