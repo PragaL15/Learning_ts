@@ -10,15 +10,23 @@
    ```bash
    npm i
    ```
-
 ---
+## Angular CLI
+1. `ng version` --> To find all details about the Angular version.
+2. `ng new <project/name>` --> To create a new project
+3. `ng generate` --> Creates the required files (e.g., .ts, .html, .css) with default content.
+                     Saves time by avoiding manual file creation and reduces boilerplate code.
+                     ex: component , module , service, pipe ,directive , routing ,interface  model , class all these could be created.
+4. `ng test` --> Used for running the unit testes and the files with `.spec.ts` will be excecuted.
+5. `ng add name_package` --> To add packages and modules of angular.
+6. `ng update` --> To update any angular application to other version using ng update.
 
 ## Angular Components Overview
 Each component represents a specific part of the user interface, defined by:
 - **`selector`**: Specifies the custom HTML tag (e.g., `<app-root>`) for rendering this component.
 - **`imports`**: Declares required dependencies (e.g., `RouterOutlet` for routing).
 - **`templateUrl`**: Points to the external HTML file for the component's UI.
-- **`styleUrl`**: Points to the CSS file for styling the component.
+- **`styleUrl`**: Points to the CSS file for styling the component or link to css.
 
 Example:
 ```ts
@@ -48,6 +56,12 @@ export class AppComponent {
    - `dynamic`: Generates HTML at runtime for each request.
 
 ---
+## Angular 17 - Modular Architecture
+1. No more NgModule
+2. No more default AppModule 
+3. Everything is standalone so we could use them irectly without importing the module as it's standalone. 
+4. Still modules are supported in this versions.
+5. Components will communicate with each oher using the input and output decerators.
 
 ## Interfaces
 **Definition**: An interface defines the shape or structure of an object, acting as a contract that specifies properties and methods.
@@ -104,7 +118,7 @@ Example:
    4.`.ts` --> Logical piece of component
 
    - **`main.ts`**: Entry point of the application.
-   - **`index.html`**: The main HTML file served to users and this is only single file present.
+   - **`index.html`**: The main HTML file served to users and this is only single file present and the selector is mentioned in this and tht's how the HTML code has the SPA.
    - **`environment/`**: Contains configurations for production and development.
    - **`assets/`**: For storing images and static files.
    - **`polyfills`**: Ensures compatibility with older browsers.
@@ -188,7 +202,6 @@ Example:
 - **`browserslistrc`**: Ensures the application supports specific browsers.
 
 ---
-
 ## Summary
 This cheat sheet highlights the essential components and configurations for working with Angular, from installation to rendering and testing.
 ```
