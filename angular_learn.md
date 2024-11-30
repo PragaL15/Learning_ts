@@ -70,6 +70,12 @@ export class AppComponent {
 1. @input --> Used for sending the data to the component
 2. @output --> Used for sending the data from the component.
 
+We have parent component and child component , from that I need ensure that only parent must import the child component , if child component also imports the parent component then we'll get the `cyclic dependency`.
+
+To avoid this, ensure:
+- The parent component imports the child component.
+- The child component does not import the parent component.
+
 ## Component Structure 
 1. `<component_name>.component.html` --> Template/HTML/UI
 2. `<component_name>.component.css` --> Stylesheet for the componet
