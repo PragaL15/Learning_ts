@@ -76,6 +76,76 @@ To avoid this, ensure:
 - The parent component imports the child component.
 - The child component does not import the parent component.
 
+---
+
+
+2. Output 
+**child.component.ts**
+```typescript
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Hello Parent!');
+  }
+}
+```
+
+#### **child.component.html**
+```html
+<button (click)="sendMessage()">Send Message</button>
+```
+
+---
+
+### **Parent Component**
+
+#### **parent.component.ts**
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css']
+})
+export class ParentComponent {
+  message: string = '';
+
+  receiveMessage(message: string) {
+    this.message = message;
+  }
+}
+```
+
+#### **parent.component.html**
+```html
+<app-child (messageEvent)="receiveMessage($event)"></app-child>
+<p>Message from child: {{ message }}</p>
+```
+
+---
+
+### **Explanation**
+1. **Child Component**:
+   - Uses `@Output()` and `EventEmitter` to define the `messageEvent`.
+   - Calls the `emit()` method in `sendMessage()` to send data (`'Hello Parent!'`) to the parent component.
+
+2. **Parent Component**:
+   - Defines a `receiveMessage()` method to handle the event from the child component.
+   - Updates the `message` property with the received value.
+
+3. **Template Binding**:
+   - The parent component listens for the `messageEvent` from the child component using `(messageEvent)="receiveMessage($event)"`.
+   - The message is displayed in the parent component using interpolation: `{{ message }}`.
+
 ## Component Structure 
 1. `<component_name>.component.html` --> Template/HTML/UI
 2. `<component_name>.component.css` --> Stylesheet for the componet
