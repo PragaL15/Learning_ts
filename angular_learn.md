@@ -65,7 +65,7 @@ export class AppComponent {
 
 ---
 
-## Component Dataflow
+## Component Dataflow and communication
 
 1. @input --> Used for sending the data to the component
 2. @output --> Used for sending the data from the component.
@@ -77,9 +77,25 @@ export class AppComponent {
 4. `<component_name>.component.ts` --> Class for the component/logic/data/interactions.
 
 ---
+## Angular 16 and below vs Angular 17 --> Routing Module
+
+The main file in the of Angular 17 is `app.config.ts` and it has all the details.
+
+1. Angular 16
+ - AppModule and AppRoutingModule are needed.
+ - Importing AppRoutingModule --> `AppModule`
+ - `AppModule` --> main.ts
+
+2. Angular 17
+ - App.routes.ts --> Has class named as `AppRoutes`
+ - App.routes.ts --> is imported in App.config.ts
+ - `AppConfig` class --> Is sent to the main.ts file
+
+We could use the `routingModule` in the Angular 17  by using the `ng generate module <module name> --routing` we could install the routing module.
+---
+
 ## Component Databinding
  class --> template --> Class
-
  ---
  ## Generate Components
  1. `ng generate component <component_name>` --> This will create a `.css` , `.html` , `.ts` and `spec.ts` with the same name.
@@ -99,7 +115,6 @@ const user2: User = { id: 2, name: 'Bob', email: 'bob@example.com' }; // Also va
 ```
 
 ---
-
 ## Two-Way Data Binding
 - **`ngModel`**: Connects the template and the model, allowing changes in the UI to reflect in the logic and vice versa.
 
@@ -128,6 +143,22 @@ Example:
    - Provides better first-page load performance.
 
 ---
+## Angular 17 VS Angular 16 and below versions
+
+1. **Angular 16 and below** 
+  --> Its mandatory to have atleast one module.
+  -->Appmodule is must
+  --> main.ts --> Bootstrap AppModule 
+
+2. **Angular 17** 
+  --> Everything is standalone(independent of modules)
+  --> No mandatory module is require
+  --> No need of AppModule 
+  --> But we could create our own custom module
+  --> Things we did in Angular 16 is valid
+  --> main.ts --> Bootstrap AppComponent
+
+  ---
 
 ## Angular File Structure
 1. **`src` Folder**:
@@ -218,7 +249,23 @@ Example:
 ## Standalone Components
 - **Angular 17** supports standalone components, eliminating the need for NgModules to bootstrap an application.
 
+1. All the imports could be directly imported.
+2. We could use `ng g c <component_name>` instead of `ng generate component <component_name>`.
+3. `ng g c <component_name>` --> Will create a folder in component's name and inside the it will create all the file.
+4. `ng g c <component_name> --flat` --> Will not create a folder but instead will just create the require files without a folder but in the common folder.
+
+5. If we need the component without standalone then we must have atleast one Module in application `ng g c <component_name> --standalone false --module_name= module_path --dry-run`.
+To create a module inside a folder with module name --> `ng g c <module_name>`
 ---
+## Using components
+1. We've a prefix for every generated component and the prefix is present in `angular.json` as `prefix: "prefix_name"`
+2. Each component will have a unique selector name.
+3. If we are adding a new component and our default component is `app.<component_name>`, 
+    - We need to import the new component into our `app.components.ts` and add them into imports.
+    - Check the templateURL in the `components.ts` and add the `<new_imported_component_name> </new_imported_component_name>` into that `.html` file.
+    - Now the new component will be included.
+    - We could also import the any component into our other components using the similar way.
+--- 
 
 ## Browser Compatibility
 - **`browserslistrc`**: Ensures the application supports specific browsers.
