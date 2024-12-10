@@ -128,6 +128,7 @@ export class ParentComponent {
 
 ---
 ### **Explanation**
+
 1. **Child Component**:
    - Uses `@Output()` and `EventEmitter` to define the `messageEvent`.
    - Calls the `emit()` method in `sendMessage()` to send data (`'Hello Parent!'`) to the parent component.
