@@ -120,7 +120,6 @@ export class ParentComponent {
   }
 }
 ```
-
 #### **parent.component.html**
 ```html
 <app-child (messageEvent)="receiveMessage($event)"></app-child>
@@ -128,7 +127,6 @@ export class ParentComponent {
 ```
 
 ---
-
 ### **Explanation**
 1. **Child Component**:
    - Uses `@Output()` and `EventEmitter` to define the `messageEvent`.
