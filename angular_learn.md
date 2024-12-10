@@ -100,11 +100,9 @@ export class ChildComponent {
 ```html
 <button (click)="sendMessage()">Send Message</button>
 ```
-
 ---
 
 ### **Parent Component**
-
 #### **parent.component.ts**
 ```typescript
 import { Component } from '@angular/core';
