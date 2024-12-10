@@ -78,6 +78,7 @@ To avoid this, ensure:
 
 ---
 2. Output 
+
 **child.component.ts**
 ```typescript
 import { Component, Output, EventEmitter } from '@angular/core';
