@@ -77,8 +77,6 @@ To avoid this, ensure:
 - The child component does not import the parent component.
 
 ---
-
-
 2. Output 
 **child.component.ts**
 ```typescript
