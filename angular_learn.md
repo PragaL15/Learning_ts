@@ -96,7 +96,6 @@ export class ChildComponent {
   }
 }
 ```
-
 #### **child.component.html**
 ```html
 <button (click)="sendMessage()">Send Message</button>
