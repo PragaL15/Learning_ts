@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { CrewComponent } from '../crew/crew.component';
+
 @Component({
   selector: 'app-flight',
   standalone: true,
   imports: [CrewComponent],
   templateUrl: './flight.component.html',
-  styleUrl: './flight.component.css'
+  styleUrls: ['./flight.component.css']
 })
 export class FlightComponent {
+  message: string = '';
 
-messageAsParent: string = "Hello Pragall"
-sayHi : boolean = false
-
+  receiveMessage(event: string) {
+    this.message = event; 
+  }
 }

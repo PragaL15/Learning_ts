@@ -1,4 +1,3 @@
-<p>flight works!</p>
-<app-crew [message]="messageAsParent" [bool]="sayHi"></app-crew>
-
- 
+<p>Flight Works!</p>
+<app-crew (messageEvent)="receiveMessage($event)"></app-crew>
+<p>Message from child: {{ message }}</p>

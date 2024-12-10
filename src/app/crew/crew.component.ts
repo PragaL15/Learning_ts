@@ -1,13 +1,15 @@
-import { Component, Input } from '@angular/core';
-//import{ FlightComponent} from '../flight/flight.component';
+import { Component, Output, EventEmitter } from '@angular/core';
+
 @Component({
   selector: 'app-crew',
   standalone: true,
-  imports: [],
   templateUrl: './crew.component.html',
-  styleUrl: './crew.component.css'
+  styleUrls: ['./crew.component.css']
 })
 export class CrewComponent {
-@Input() message: string = ""
-@Input() bool : boolean = true
+  @Output() messageEvent = new EventEmitter<string>(); 
+
+  sendMsg() {
+    this.messageEvent.emit('Hello Boss'); 
+  }
 }
