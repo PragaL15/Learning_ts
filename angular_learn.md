@@ -162,9 +162,8 @@ The main file in the of Angular 17 is `app.config.ts` and it has all the details
  - App.routes.ts --> is imported in App.config.ts
  - `AppConfig` class --> Is sent to the main.ts file
 
-We could use the `routingModule` in the Angular 17  by using the `ng generate module <module name> --routing` we could install the routing module.
+We could use the `routingModule` in the Angular 17 by using the `ng generate module <module name> --routing` we could install the routing module.
 ---
-
 ## Component Databinding
  class --> template --> Class
  ---
